@@ -84,6 +84,16 @@ namespace InstaSharp.Models
         /// The videos.
         /// </value>
         public Video Videos { get; set; }
+
+        /// <summary>
+        /// Gets or sets the carousel media.
+        /// </summary>
+        /// <value>
+        /// The carousel media.
+        /// </value>
+        [JsonProperty("carousel_media")]
+        public List<CarouselMedia> CarouselMedia { get; set; }
+
         /// <summary>
         /// Gets or sets the type.
         /// </summary>

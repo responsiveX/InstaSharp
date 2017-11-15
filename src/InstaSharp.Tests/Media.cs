@@ -53,6 +53,20 @@ namespace InstaSharp.Tests
         }
 
         [TestMethod, TestCategory("Media.Get")]
+        public async Task GetCarouselWithImages()
+        {
+            var result = await media.Get("1619322832848658894_457273003");
+            Assert.IsTrue(result.Data != null);
+            Assert.IsTrue(result.Data.CarouselMedia != null);
+            Assert.IsTrue(result.Data.CarouselMedia.Count > 0);
+            Assert.IsTrue(result.Data.CarouselMedia[0].Images != null);
+            Assert.IsTrue(result.Data.CarouselMedia[0].Images.LowResolution != null);
+            Assert.IsTrue(result.Data.Images != null);
+            Assert.IsTrue(result.Data.Images.LowResolution != null);
+            Assert.IsTrue(result.Data.Videos == null);
+        }
+
+        [TestMethod, TestCategory("Media.Get")]
         public async Task UserHasLikedTrue()
         {
             var result = await media.Get("756098117387669401_1415228826");
